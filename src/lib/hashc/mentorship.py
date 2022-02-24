@@ -173,21 +173,24 @@ def main():
             #self, name, skills
             name = contributor_line[0]
             skills = int(contributor_line[1])
-            contributor = contributor(name, skills)
-            contributors.append(contributor)
-            # contributor = Contributor(contributor_line[0], contributor_line[1], contributor_line[2], contributor_line[3])
-            # contributors.append(contributor)
+            contributors.append(Contributors(name, skills))
         # projects
         projects = []
         for i in range(M):
             #name, duration, score, best_before, roles
-            name, duration, score, best_before, roles = f.readline().split(' ')
+            lines = f.readline().split(' ')
+            name = lines[0]
+            duration = int(lines[1])
+            score = int(lines[2]) 
+            #IndexError: list index out of range
+            best_before = lines[3]
+            roles = []
             project = Project(name, duration, score, best_before, roles)
-            #skills 
+            #skills defaultdict
             skills = []
             for j in range(int(roles)):
-                skill, level = f.readline().split(' ')
-                skills.append(Skill(skill, level))
+                skill = f.readline().split(' ')
+                skills[skill[0]] = int(skill[1])
             project.roles = skills
             projects.append(project)
         
