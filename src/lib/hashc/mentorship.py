@@ -156,7 +156,7 @@ def learn(contributors, projects):
 # The main function
 def main():
     # read input
-    with open("src/lib/hashc/input_data/a_an_example.in.txt", 'r') as f:
+    with open("src/lib/hashc/input_data/f_find_great_mentors.in.txt", 'r') as f:
         lines = f.readline().rstrip('\n').split(' ')
         #readlines()
         # number of projects
