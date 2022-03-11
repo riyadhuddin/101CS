@@ -1,0 +1,1 @@
+# write email slicer class
